@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Signup and Login</title>
+   <style>
+      
+      h2{
+         
+         text-align: center;
+      }
+      #container{
+         /* border: 1px solid red; */
+         width: 40%;
+         margin: auto;
+         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+         
+      }
+      input{
+         display: block;
+         width: 90%;
+         margin: auto;
+         border-radius: 6px;
+         font-size: 15px;
+         padding: 10px 15px;
+         margin-bottom: 10px;
+      }
+      h3{
+         
+         width: 92%;
+         margin: auto;
+         margin-bottom: 10px;
+         /* border: 1px solid red; */
+      }
+      p{
+         font-weight: bold;
+         text-align: center;
+         margin-top: 0px;
+         padding: 15px;
+         
+      }
+      a{
+         text-decoration: none;
+         color: rgb(60, 158, 216);
+        
+      }
+
+   </style>
+</head>
+<body>
+   
+   <div id="container">
+      <h2>Sign Up</h2>
+   <form id="signup">
+      <h3>Full Name</h3>
+      <input id="name" type="text" placeholder="Enter Your Full Name">
+      <h3>Email</h3>
+      <input id="email" type="text" placeholder="Enter Email">
+      <h3>Password</h3>
+      <input id="password" type="password" placeholder="Enter Password">
+      <input type="submit" value="SignUp">
+   </form>
+   <p>If You have already Account <a href="login.html">Log in</a></p>
+</div>
+</body>
+</html>
+<script>
+    
+   
+      
+   var form = document.querySelector("#signup")
+   form.addEventListener('submit',function(){
+      event.preventDefault();
+      var detail = {
+      name:form.name.value,
+      email:form.email.value,
+      password:form.password.value,
+   } 
+   
+      var x  =localStorage.setItem("signup",JSON.stringify(detail))
+
+   //    if(JSON.parse(localStorage.getItem("signup"== null))){
+   //     alert("fill all the details")
+   //  }
+   //  else{}
+       window.location.href="login.html"
+    
+   })
+  
+   
+   
+</script>
